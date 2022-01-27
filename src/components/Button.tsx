@@ -6,12 +6,13 @@ interface Props {
     children?: ReactChild,
     align?: string,
     primary?:boolean,
-    onClick?:any
+    onClick?:any,
+    onSubmit?:any
 }
 
 const Button: FC<Props> = (props: Props) => {
     return (
-        <StyledButton primary={props.primary} onClick={props.onClick}>
+        <StyledButton primary={props.primary}  onSubmit={props.onSubmit}>
             {props.children}
         </StyledButton>
     );

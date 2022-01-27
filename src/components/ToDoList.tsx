@@ -20,7 +20,8 @@ const ToDoList: FC = () => {
     const [allList,setallList]=useState<ItoDo[]>(toDoList)
     const {createToDo,deleteToDo,filterToDo,setIsCompletedToDo}=useActions()
  
-    const handleCreate=()=>{
+    const handleSubmit=(ev:any)=>{
+        ev.preventDefault()
         if(toDoData.text){
             createToDo(toDoData)
             setToDoData({
@@ -49,15 +50,17 @@ if(!toDoData.text.length){
     return (
         <ToDoListContainer >
             <ToDoListHeader>
+                <Form onSubmit={handleSubmit}>
                 <InputContainer>
                     <RiFileList3Line/>
                     <Input type="text"
                      value={toDoData.text} 
                      onChange={(ev:any)=>handleChange(ev.target.value,"text")}/>
                 </InputContainer>
-                <Button primary onClick={handleCreate}>
+                <Button primary onSubmit={handleSubmit}>
                     Add todo
                 </Button>
+                </Form>
             </ToDoListHeader>
             <ToDoLists>
                 {allList.map(({id,isCompleted,text})=>(
@@ -80,7 +83,12 @@ if(!toDoData.text.length){
         </ToDoListContainer>
     );
 };
+const Form=styled.form`
+display:flex;
+width: 100%;
+gap:0.5rem;
 
+`
 const InputContainer = styled.div`
 width:100%;
 display:flex;
