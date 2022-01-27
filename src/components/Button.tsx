@@ -22,7 +22,7 @@ border:none;
 padding: 0.5rem 1rem;
 cursor:pointer;
 ${({primary}) => primary && css`
-    background-color: #109354;
+    background-color: #64cddb;
     color: white;
 `};
 `

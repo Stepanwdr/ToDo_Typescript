@@ -126,7 +126,7 @@ justify-content: space-between;
 align-items: center;
 border-radius:1rem;
 padding:0.5rem;
-box-shadow: 0 0 40px rgba(0,0,0,0.5);
+box-shadow: 0 0 20px rgba(0,0,0,0.4);
 width:100%;
 background-color: ${(props)=>props.isCompleted ? "#9dffd0" : "white"};
 text-decoration:${(props)=>props.isCompleted && "line-through"};

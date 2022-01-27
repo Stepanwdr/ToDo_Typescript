@@ -7,22 +7,22 @@ const initialState: ToDoState = {
         {
             id: 1,
             isCompleted: false,
-            text: "Create components"
+            text: "Create React App"
         },
         {
             id: 2,
             isCompleted: false,
-            text: "Create Stores"
+            text: "Add Packages"
         },
         {
             id: 3,
             isCompleted: false,
-            text: "Create Types"
+            text: "Buid App"
         },
         {
             id: 4,
             isCompleted: false,
-            text: "Make Lessons"
+            text: "Push Git"
         },
 
     ],
@@ -73,8 +73,8 @@ export default function ToDoReducer(state = initialState, action: ToDoAction): T
         case ToDoActionEnum.SET_IS_COMPLETED_TO_DO:{
             const id=action.payload
              let completedToDo = {...state.toDoList.find((list)=>list.id === id) } as  ItoDo
-            const allToDos=[...state.toDoList.filter((list)=>list.id !== id)]as  ItoDo[]
-            completedToDo = {...completedToDo ,isCompleted:!completedToDo .isCompleted}
+            const allToDos=[...state.toDoList.filter((list)=>list.id !== id)] as  ItoDo[]
+            completedToDo = {...completedToDo ,isCompleted:!completedToDo.isCompleted}
               return {
                 ...state,
                 filterValue:undefined,
