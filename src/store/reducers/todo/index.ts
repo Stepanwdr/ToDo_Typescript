@@ -17,7 +17,7 @@ const initialState: ToDoState = {
         {
             id: 3,
             isCompleted: false,
-            text: "Buid App"
+            text: "Commit git"
         },
         {
             id: 4,
